@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="banner_box">
+        <view class="banner_item"> 1</view>
+        <!-- <view class="banner_item"> 2</view>
+        <view class="banner_item"> 3</view> -->
+    </view>
+    <view class="item">
+    <image src="../../static/image/qingxi.png"></image>
+    <text>家电清洗</text>
+    </view>
+     <view class="item">
+    <image src="../../static/image/kaisuo.png"></image>
+    <text>家电维修</text>
+    </view>
+     <view class="item">
+    <image src="../../static/image/tel.png"></image>
+      <text>手机维修</text>
+    </view>
+     <view class="item">
+    <image src="../../static/image/电脑维修.png"></image>
+     <text>卫浴洁具</text>
+    </view>
+      <view class="item">
+    <image src="../../static/image/guandao.png"></image>
+    <text>电脑维修</text>
+    </view>
+      <view class="item">
+    <image src="../../static/image/qingxi.png"></image>
+    <text>管道维修</text>
+    </view>
+</view>
