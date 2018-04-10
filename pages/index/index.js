@@ -7,7 +7,13 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    imgUrls: [],
+     
+    indicatorDots: true,
+    autoplay: true,
+    interval: 2000,
+    duration: 1000
   },
   //事件处理函数
   bindViewTap: function() {
@@ -41,7 +47,20 @@ Page({
           })
         }
       })
-    }
+    };
+    // 获取homedata;
+    wx.request({
+      url: "http://app.dingdingkuaixiu.com/homedata",
+      method:"GET",
+      success:res=>{
+          const data=res.data;
+          if(data.code==="0000"){
+            this.setData({
+              imgUrls:data.result.slideShow
+            })
+          }
+      }
+    })
   },
   getUserInfo: function(e) {
     console.log(e)

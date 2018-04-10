@@ -31,3 +31,10 @@ color: #4A4A4A;
   background:pink;
   float:left;
 }
+swiper{
+  width:100%;
+}
+
+.slide-image{
+  height:100%;
+}

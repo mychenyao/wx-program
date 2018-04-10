@@ -1,10 +1,19 @@
 <!--index.wxml-->
 <view class="container">
-    <view class="banner_box">
+    <!-- <view class="banner_box">
         <view class="banner_item"> 1</view>
-        <!-- <view class="banner_item"> 2</view>
-        <view class="banner_item"> 3</view> -->
-    </view>
+
+    </view> -->
+    <!--banner 图 start   -->
+    <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item.image}}" class="slide-image" width="100%" height="100%"/>
+          </swiper-item>
+        </block>
+      </swiper>
+<!--banner 图 end   -->
     <view class="item">
     <image src="../../static/image/qingxi.png"></image>
     <text>家电清洗</text>
@@ -22,6 +31,7 @@
      <text>卫浴洁具</text>
     </view>
       <view class="item">
+      
     <image src="../../static/image/guandao.png"></image>
     <text>电脑维修</text>
     </view>
@@ -29,4 +39,6 @@
     <image src="../../static/image/qingxi.png"></image>
     <text>管道维修</text>
     </view>
+    
 </view>
+<!-- <web-view src="https://wechat.dingdingkuaixiu.com"></web-view> -->
