@@ -9,7 +9,33 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     imgUrls: [],
-     
+    navList:[
+        {
+          name:"家电维修",
+          images:"../../static/image/kaisuo.png",
+          url:"/pages/webview/webview"
+        }, {
+          name:"家电清洗",
+          images:"../../static/image/qingxi.png",
+          url:"/pages/webview/webview"
+        }, {
+          name:"家电维修",
+          images:"../../static/image/kaisuo.png",
+          url:"/pages/webview/webview?id=003003"
+        }, {
+          name:"手机维修",
+          images:"../../static/image/tel.png",
+          url:"/pages/webview/webview?id=004"
+        }, {
+          name:"卫浴洁具",
+          images:"../../static/image/电脑维修.png",
+          url:"./pages/webview/webview"
+        },{
+          name:"管道维修",
+          images:"../../static/image/qingxi.png",
+          url:"/pages/webview/webview"
+        },
+    ],
     indicatorDots: true,
     autoplay: true,
     interval: 2000,
