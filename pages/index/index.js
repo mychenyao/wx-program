@@ -49,8 +49,9 @@ Page({
       })
     };
     // 获取homedata;
+    
     wx.request({
-      url: "http://app.dingdingkuaixiu.com/homedata",
+      url: "https://app.dingdingkuaixiu.com/homedata",
       method:"GET",
       success:res=>{
           const data=res.data;
