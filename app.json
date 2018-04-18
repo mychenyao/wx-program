@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/webview/webview"
+    "pages/webview/webview",
+    "pages/affirmorder/affirmorder"
   ],
   "window": {
     "backgroundTextStyle": "light",

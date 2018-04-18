@@ -1,24 +1,34 @@
 // pages/webview/webview.js
+let app=getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    webviewUrl:"https://wechat.dingdingkuaixiu.com"
+      webViewUrl:''
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      const id=options.id,
-            firstId=id.substring(0,3);
+      const isParams=JSON.stringify(options)!=="{}",
+            hash=()=>{
+              let str=`/#/${options.routerPath}`;
+              if(isParams){
+                let urlStr='?';
+                  for(let k in options){
+                    if(k!=='routerPath')urlStr+=`${k}=${options[k]}&`
+                  }
+                  str+=urlStr.length>1?urlStr.substring(0,urlStr.length-1):'';
+              }else{
+                  str=""
+              }
+              return str
+            };
       this.setData(
-          {webviewUrl:`${this.data.webviewUrl}/#/wash/${firstId}?id=${id}`}
-      )
-      console.log(this.data.webviewUrl);
-      console.log(options);
+          {webViewUrl:`${app.globalData.webViewUrl}${hash()}`}
+      );
   },
 
   /**

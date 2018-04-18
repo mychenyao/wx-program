@@ -9,8 +9,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.6.6",
-	"appid": "wx3c1dae4b5cdc36b9",
-	"projectname": "userItem",
+	"appid": "wx064eaa1baf7f51bb",
+	"projectname": "testuserItem",
 	"condition": {
 		"search": {
 			"current": -1,

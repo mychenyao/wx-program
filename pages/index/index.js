@@ -21,11 +21,11 @@ Page({
         }, {
           name:"家电维修",
           images:"../../static/image/kaisuo.png",
-          url:"/pages/webview/webview?id=003003"
+          url:"/pages/webview/webview?routerPath=wash/002"
         }, {
           name:"手机维修",
           images:"../../static/image/tel.png",
-          url:"/pages/webview/webview?id=004"
+          url:"/pages/webview/webview?routerPath=wash/003"
         }, {
           name:"卫浴洁具",
           images:"../../static/image/电脑维修.png",
@@ -48,7 +48,8 @@ Page({
     })
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
+
+      if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
@@ -57,7 +58,8 @@ Page({
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
-        this.setData({
+          console.log(res);
+          this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
         })
@@ -66,7 +68,8 @@ Page({
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
-          app.globalData.userInfo = res.userInfo
+            console.log(res);
+            app.globalData.userInfo = res.userInfo
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
@@ -77,8 +80,7 @@ Page({
     // 获取homedata;
     
     wx.request({
-      url: "https://app.dingdingkuaixiu.com/homedata",
-      method:"GET",
+      url: `${app.globalData.apiDomain}/homedata`,
       success:res=>{
           const data=res.data;
           if(data.code==="0000"){
@@ -89,12 +91,12 @@ Page({
       }
     })
   },
+
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      hasUserInfo: true,
     })
   }
 })

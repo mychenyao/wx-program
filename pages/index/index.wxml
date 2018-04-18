@@ -2,22 +2,26 @@
 <view class="container">
     <!-- <view class="banner_box">
         <view class="banner_item"> 1</view>
-
     </view> -->
     <!--banner 图 start   -->
     <swiper indicator-dots="{{indicatorDots}}"
         autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
         <block wx:for="{{imgUrls}}" wx:key="{{index}}">
           <swiper-item>
+          
             <image src="{{item.image}}" class="slide-image" width="100%" height="100%"/>
           </swiper-item>
         </block>
       </swiper>
 <!--banner 图 end   -->
     <navigator wx:for="{{navList}}" wx:key="{{index}}" class="item" url="{{item.url}}">
+    
     <image src="{{item.images}}"></image>
     <text>{{item.name}}</text>
+
     </navigator>
+
+
 
 
     
